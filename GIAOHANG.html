@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>XONXEN/chitiet</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+	<link rel="stylesheet" href="https://cdn.leanhduc.pro.vn/utilities/animation/shake-effect/style.css"/>
+	<script>
+  $(function () {
+    $('[data-toggle="popover"]').popover();
+  });
+  const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+	const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+</script>
+</head>
+<body>
+<style type="text/css">
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+#exampleModal1{
+	transition: transform 0.2s;
+}
+#exampleModal1:hover{
+	transform: scale(1.9);
+}
+.bst1{
+	color: black;
+}
+.bst1:hover{
+	color: #FF4500;
+}
+.bst2{
+	color: black;
+}
+.bst2:hover{
+	color: #FF4500;
+}
+.bst3{
+	color: black;
+}
+.bst3:hover{
+	color: #FF4500;
+}
+
+a{
+text-decoration: none;
+}
+#exampleModalLabel2 {
+ outline: none;
+ cursor: pointer;
+ border: none;
+ padding: 0.9rem 2rem;
+ margin: 0;
+ font-family: inherit;
+ font-size: inherit;
+ position: relative;
+ display: inline-block;
+ letter-spacing: 0.05rem;
+ font-weight: 500;
+ font-size: 12px;
+ border-radius: 20px;
+ overflow: hidden;
+ background: #FF8C00;
+ color: black;
+}
+
+#exampleModalLabel2 span {
+ position: relative;
+ z-index: 10;
+ transition: color 0.4s;
+}
+
+#exampleModalLabel2:hover span {
+ color: black;
+}
+
+#exampleModalLabel2::before,
+#exampleModalLabel2::after {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ z-index: 0;
+}
+
+#exampleModalLabel2::before {
+ content: "";
+ background: #FFFFFF;
+ width: 120%;
+ left: -10%;
+ transform: skew(30deg);
+ transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+}
+
+#exampleModalLabel2:hover::before {
+ transform: translate3d(100%, 0, 0);
+}
+/*button*/
+#button1 {
+ padding: 0.5em 1em;
+ border: 1px solid #C8C8C8;
+ position: relative;
+ overflow: hidden;
+ background-color: #C8C8C8;
+ text-align: center;
+ text-transform: uppercase;
+ font-size: 12px;
+ transition: .3s;
+ z-index: 1;
+ font-family: inherit;
+ color: black;
+}
+
+#button1::before {
+ content: '';
+ width: 0;
+ height: 515%;
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%) rotate(45deg);
+ background: white;
+ transition: .5s ease;
+ display: block;
+ z-index: -1;
+}
+
+#button1:hover::before {
+ width: 105%;
+ border: 30px solid #FF8C00;
+}
+
+#button1:hover {
+ color: #FF8C00;
+}
+
+/*///button///*/
+	</style>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content text-center">
+      <div class="modal-header bg-light">
+        <h1 class="modal-title text-center fs-5" id="exampleModalLabel">Giỏ hàng</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body bg-warning-subtle">
+        <div class="rung"><i class="bi bi-cart4 fs-1"></i><br></div>
+        Hiện chưa có sản phẩm
+      </div>
+      <span>
+     		<p class="mt-2 text-start mb-0 ms-1">TỔNG TIỀN: <i class="text-danger float-end mx-3">0đ</i></p><br>
+     	</span>
+      <div class="text-center modal-footer">
+        <button type="button" class="btn btn-secondary mx-4 border border-warning" id="exampleModalLabel2"><span>XEM GIỎ HÀNG</span></button>
+        <button type="button" class="btn btn-secondary mx-5 border border-warning" id="exampleModalLabel2"><span>THANH TOÁN</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+		        <!-- *** -->
+	<!-- ModalThem -->
+<div class="modal fade " id="exampleModalE" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    
+      <div class="modal-header rounded-pill bg-success-subtle">
+        <h1 class="modal-title fs-6 w-50" id="exampleModalLabel" style="margin-left: 29%;">Đã Thêm Địa Chỉ Giao Hàng</h1>
+        
+      </div>
+    
+  </div>
+</div>
+		        <!-- *** -->
+
+	<div class="container">
+		<nav class="navbar navbar-expand-lg fixed-top bg-body-tertiary">
+  <div class="container-fluid">
+  	<div class="col"></div>
+    <a class="navbar-brand" href="#"><img src="https://file.hstatic.net/200000536797/file/logo_xon_xen_75_aa170c5c14ee4526_a1e017091880419d8f68ac28aff57996.png" class="img-fluid" alt="ảnh logo" width="50"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+		    <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+		      <ul class="navbar-nav">
+		        <li class="nav-item dropdown">
+						  <div class="dropdown">
+						    <button class="btn dropdown-toggle border-body ms-5" data-bs-toggle="dropdown" aria-expanded="false">
+						      SẢN PHẨM
+						    </button>
+						    <ul class="dropdown-menu ms-5">
+						      <li><a class="dropdown-item" href="AOKIEU.html">Áo Kiểu</a></li>
+						      <li><a class="dropdown-item" href="#">Quần SHORT</a></li>
+						      <li><a class="dropdown-item" href="#">Chân Váy</a></li>
+						      <li><a class="dropdown-item" href="#">Váy Đầm</a></li>
+						      <li><a class="dropdown-item" href="#">Áo Khoác Vải</a></li>
+						      <li><a class="dropdown-item" href="#">Áo Thun</a></li>
+						    </ul>
+						  </div>
+						</li>
+
+		      </ul>
+		      <ul class="navbar-nav">
+		        <li class="nav-item dropdown">
+		          <button class="btn dropdown-toggle border-body ms-5" data-bs-toggle="dropdown" aria-expanded="false">
+		            BÁN CHẠY NHẤT
+		          </button>
+		          <ul class="dropdown-menu dropdown-menu ms-5">
+		            <li><a class="dropdown-item" href="#">Quần SHORT</a></li>
+		            <li><a class="dropdown-item" href="#">Váy Đầm</a></li>
+		            <li><a class="dropdown-item" href="#">Áo Khoác Vải</a></li>
+		          </ul>
+		        </li>
+		      </ul>
+		      <ul class="navbar-nav">
+		        <li class="nav-item dropdown">
+
+		          <button class="btn dropdown-toggle border-body ms-5" data-bs-toggle="dropdown" aria-expanded="false">
+		            SALE
+		          </button>
+		          <ul class="dropdown-menu dropdown-menu ms-5">
+		            <li><a class="dropdown-item" href="#">Áo Khoác Vải</a></li>
+		            <li><a class="dropdown-item" href="#">Áo Thun</a></li>
+		            <li><a class="dropdown-item" href="#">Mũ</a></li>
+		          </ul>
+		        </li>
+		      </ul>
+		      <ul class="navbar-nav">
+		        <li class="nav-item dropdown">
+
+		          <button class="btn dropdown-toggle border-body ms-5" data-bs-toggle="dropdown" aria-expanded="false">
+		            TIN TỨC
+		          </button>
+		          <ul class="dropdown-menu dropdown-menu ms-5">
+		            <li><a class="dropdown-item" href="#">Blogs</a></li>
+		            <li><a class="dropdown-item" href="#">Về Xonxen</a></li>
+		            <li><a class="dropdown-item" href="#">Hệ thông cửa hàng</a></li>
+		            <li><a class="dropdown-item" href="#">Chính sách</a></li>
+		          </ul>
+		        </li>
+		      </ul>
+		      <ul class="navbar-nav">
+		        <li class="nav-item dropdown">
+
+		          <button class="btn dropdown-toggle border-body ms-5" data-bs-toggle="dropdown" aria-expanded="false">
+		            KIỂM TRA ĐƠN HÀNG
+		          </button>
+		          <ul class="dropdown-menu dropdown-menu ms-5">
+		            <li><a class="dropdown-item" href="#">Đã Đặt</a></li>
+		            <li><a class="dropdown-item" href="#">Chưa Đặt</a></li>
+		            <li><a class="dropdown-item" href="#">Chờ Xác Nhận</a></li>
+		          </ul>
+		        </li>
+		      </ul>
+		      <i class="bi bi-search-heart ms-5" id="exampleModal1"></i>
+		         <i class="bi bi-bag-heart ms-5" data-bs-toggle="modal" data-bs-target="#exampleModal" id="exampleModal1"></i>
+
+		        <!-- Button trigger modal -->
+		        <i class="bi bi-person-heart ms-5" id="exampleModal1"></i>
+		    </div>
+		  </div>
+		</nav>
+
+		<div style="margin-top: 6%;">
+			<nav aria-label="breadcrumb">
+			  <ol class="breadcrumb" id="breadcrumb1">
+			    <li class="breadcrumb-item "><a href="./DangNhap.html" class="link-warning link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Đăng nhập</a></li>
+			    <li class="breadcrumb-item "><a href="TRANGCHU.html" class="link-warning link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Trang chủ</a></li>
+			    <li class="breadcrumb-item"><a href="#" class="link-warning link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Giới thiệu</a></li>
+
+			    <!-- Search -->
+			    <form class="d-flex ms-5 mt-0" role="search">
+        <input style="width:20rem; margin-left: 36rem;" class="form-control me-2 h-75" type="search" placeholder="Tìm kiếm" aria-label="Search">
+        <button class="btn btn-outline-warning h-75" type="submit"><i class="bi bi-search-heart"></i></button>
+      </form>
+			    <!-- *** -->
+		      </ol>
+			</nav>
+		</div>
+
+	 <!-- Xem thêm sản phẩm khác -->
+	 <div class="container mt-5">
+	 	<h1 class="text-center  mb-5">GIAO HÀNG</h1>
+	 	<!-- CSS -->
+
+
+
+<style type="text/css">
+.giaohang{
+	width: 110vh;
+	height: 40vh;
+}
+</style>
+<!--  -->
+<!-- BODDY -->
+	<div class="container">
+		<div class="row">
+			<div class="col-md-5">
+				<img src="https://i.pinimg.com/originals/62/dd/c4/62ddc455488a13d67f4198a09dc4bb29.gif" class="img-fluid giaohang">
+			</div>
+
+			<div class="col-md-7">
+				<div class="input-group mb-3">
+				  <span class="input-group-text" id="basic-addon1"><i class="bi bi-person"></i></span>
+				  <input type="text" class="form-control" placeholder="Tên" aria-label="Username" aria-describedby="basic-addon1">
+				</div>
+				<div class="input-group mb-3">
+				  <span class="input-group-text" id="basic-addon1"><i class="bi bi-telephone-fill"></i></span>
+				  <input type="number" class="form-control" placeholder="Số điện thoại" aria-label="Username" aria-describedby="basic-addon1">
+				</div>
+				<div class="input-group mb-3">
+				  <span class="input-group-text" id="basic-addon1"><i class="bi bi-pin-map-fill"></i></span>
+				  <input type="text" class="form-control" placeholder="Địa chỉ" aria-label="Username" aria-describedby="basic-addon1">
+				</div>
+				<div class="form-floating">
+				  <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+				  <label for="floatingTextarea2">Ghi chú cho cửa hàng</label>
+				</div>
+				<button class="CartBtn mt-5 bg-warning">
+				  <span class="IconContainer"> 
+				    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512" fill="rgb(17, 17, 17)" class="cart"><path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"></path></svg>
+				  </span>
+				  <p class="text mt-3" data-bs-toggle="modal" data-bs-target="#exampleModalE" id="exampleModal">Thêm Địa Chỉ</p>
+				</button>
+			</div>
+
+		</div>
+<style type="text/css">
+	.CartBtn {
+  width: 140px;
+  height: 40px;
+  border-radius: 12px;
+  border: none;
+  background-color: rgb(255, 208, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition-duration: .5s;
+  overflow: hidden;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.103);
+  position: relative;
+}
+
+.IconContainer {
+  position: absolute;
+  left: -50px;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 2;
+  transition-duration: .5s;
+}
+
+.icon {
+  border-radius: 1px;
+}
+
+.text {
+  height: 100%;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(17, 17, 17);
+  z-index: 1;
+  transition-duration: .5s;
+  font-size: 1.04em;
+  font-weight: 600;
+}
+
+.CartBtn:hover .IconContainer {
+  transform: translateX(58px);
+  border-radius: 40px;
+  transition-duration: .5s;
+}
+
+.CartBtn:hover .text {
+  transform: translate(10px,0px);
+  transition-duration: .5s;
+}
+
+.CartBtn:active {
+  transform: scale(0.95);
+  transition-duration: .5s;
+}
+</style>	
+		
+		
+	</div>
+<!-- **BODY** -->
+<!-- **Xem thêm sản phẩm khác** -->
+<hr>
+<!-- Cuối -->
+<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-3 mt-3">
+				<img src="https://cf.shopee.vn/file/444e7d610fd8407ff1b8529a41adcd6d" class="img-fluid" alt="ảnh logo" width="80"></a><br>
+				<b>Liên hệ: <a href="https://www.facebook.com/khai.Gdtg.trumuytin" class="link-warning">Khải Coder</a> <i class="bi bi-check2"></i></b><br>
+				<h6 class="mt-4">Địa chỉ: 123 Bà Triệu - TP Huế</h6>
+				<h6 class="mt-4">Điện thoại: 0359176205</h6><br>
+				<h6>Theo dõi chúng tôi</h6>
+				<i class="bi bi-facebook"></i>
+				<i class="bi bi-messenger"></i>
+				<i class="bi bi-whatsapp"></i>
+			</div>
+			<div class="col-md-3">
+				<h3 class="mt-3">Hỏi đáp</h3><hr>
+				<p class="mt-4"><a href="#" class="link-success link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Hướng dẫn mua hàng</a></p>
+				<p class="mt-4"><a href="#" class="link-success link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Hướng dẫn khuyến mãi</a></p>
+				<p class="mt-4"><a href="#" class="link-success link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Hướng dẫn đổi hàng</a></p>
+				<p class="mt-4"><a href="#" class="link-success link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Hướng dẫn thanh toán</a></p>
+				<p class="mt-4"><a href="#" class="link-success link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Hướng dẫn khác</a></p>
+			</div>
+			<div class="col-md-3">
+				<h3 class="mt-3">Khách hàng</h3><hr>
+				<p class="mt-4"><a href="#" class="link-success link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Thẻ khuyến mãi</a></p>
+				<p class="mt-4"><a href="#" class="link-success link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Đăng kí tài khoản</a></p>
+				<p class="mt-4"><a href="#" class="link-success link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Chính sách</a></p>
+				<p class="mt-4"><a href="#" class="link-success link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Quà tặng tri ân</a></p>
+				<p class="mt-4"><a href="#" class="link-success link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Sản phẩm khác</a></p>
+			</div>
+			<div class="col-md-3">
+				<h3 class="mt-3">Thanh Toán</h3><hr>
+				<label for="exampleDataList" class="form-label">Email</label>
+				<input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Nhập email của bạn...">
+				<datalist id="datalistOptions">
+				  <option value="@gmail">
+				  <option value=".com">
+				</datalist>
+				<p><a href="#" class="link-warning link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Chấp nhận thanh toán</a></p>
+				<img src="https://scontent.fdad3-5.fna.fbcdn.net/v/t1.15752-9/352456783_699836118569265_2601653475588846143_n.png?_nc_cat=111&ccb=1-7&_nc_sid=ae9488&_nc_ohc=QmhcYhDhV5IAX9cyLhM&_nc_ht=scontent.fdad3-5.fna&oh=03_AdTdgEZxU6-BzdjRj_MboKXgD7v2a_dl7UqQOPUBKGJnCQ&oe=64A7D391">
+			</div>
+		</div>
+	</div>
+</body>
+</html>

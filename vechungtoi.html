@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>XONXEN</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+<body>
+
+<style type="text/css">
+.img-zoomable {
+  transition: transform 0.3s;
+}
+
+.img-zoomable:hover {
+  transform: scale(0.9);
+}
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+#breadcrumb1{
+	margin-top: 5rem;
+}
+#exampleModal1{
+	transition: transform 0.2s;
+}
+#exampleModal1:hover{
+	transform: scale(1.9);
+}
+.bst1{
+	color: black;
+}
+.bst1:hover{
+	color: #FF4500;
+}
+.bst2{
+	color: black;
+}
+.bst2:hover{
+	color: #FF4500;
+}
+.bst3{
+	color: black;
+}
+.bst3:hover{
+	color: #FF4500;
+}
+.custom-hr {
+    height: 3px;
+    width: 80px;
+    background-color: #FF4500;
+    margin: 0 auto;
+}
+a{
+text-decoration: none;
+}
+.image-container {
+overflow: hidden; /* Để ẩn phần ngoài của hình ảnh khi zoom */
+position: relative; /* Để xác định vị trí của phần tử con */
+}
+
+.image-container img {
+width: 100%; /* Đảm bảo hình ảnh lấp đầy phần tử cha */
+transition: transform 5s; /* Áp dụng hiệu ứng chuyển đổi trong 0.5 giây */
+}
+
+.image-container:hover img {
+transform: scale(1.2); /* Áp dụng hiệu ứng zoom */
+}
+#exampleModalLabel2 {
+ outline: none;
+ cursor: pointer;
+ border: none;
+ padding: 0.9rem 2rem;
+ margin: 0;
+ font-family: inherit;
+ font-size: inherit;
+ position: relative;
+ display: inline-block;
+ letter-spacing: 0.05rem;
+ font-weight: 500;
+ font-size: 12px;
+ border-radius: 20px;
+ overflow: hidden;
+ background: #FF8C00;
+ color: black;
+}
+
+#exampleModalLabel2 span {
+ position: relative;
+ z-index: 10;
+ transition: color 0.4s;
+}
+
+#exampleModalLabel2:hover span {
+ color: black;
+}
+
+#exampleModalLabel2::before,
+#exampleModalLabel2::after {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ z-index: 0;
+}
+
+#exampleModalLabel2::before {
+ content: "";
+ background: #FFFFFF;
+ width: 120%;
+ left: -10%;
+ transform: skew(30deg);
+ transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+}
+
+#exampleModalLabel2:hover::before {
+ transform: translate3d(100%, 0, 0);
+}
+	</style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js">
+	$(document).ready(function() {
+  $('.dropdown').hover(function() {
+    $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
+  }, function() {
+    $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
+  });
+});
+
+</script>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content text-center">
+      <div class="modal-header bg-light">
+        <h1 class="modal-title text-center fs-5" id="exampleModalLabel">Giỏ hàng</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body bg-warning-subtle">
+        <i class="bi bi-cart4 fs-1"></i><br>
+        Hiện chưa có sản phẩm
+      </div>
+      <span>
+     		<p class="mt-2 text-start mb-0 ms-1">TỔNG TIỀN: <i class="text-danger float-end mx-3">0đ</i></p><br>
+     	</span>
+      <div class="text-center modal-footer">
+        <button type="button" class="btn btn-secondary mx-5 border border-warning" id="exampleModalLabel2"><span>XEM GIỎ HÀNG</span></button>
+        <button type="button" class="btn btn-secondary mx-4 border border-warning" id="exampleModalLabel2"><span>THANH TOÁN</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+		        <!-- *** -->
+
+	<div class="container">
+		<nav class="navbar navbar-expand-lg fixed-top bg-body-tertiary">
+  <div class="container-fluid">
+  	<div class="col"></div>
+    <a class="navbar-brand" href="#"><img src="https://file.hstatic.net/200000536797/file/logo_xon_xen_75_aa170c5c14ee4526_a1e017091880419d8f68ac28aff57996.png" class="img-fluid" alt="ảnh logo" width="50"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+		    <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+		      <ul class="navbar-nav">
+		        <li class="nav-item dropdown">
+						  <div class="dropdown">
+						    <button class="btn dropdown-toggle border-body ms-5" data-bs-toggle="dropdown" aria-expanded="false">
+						      SẢN PHẨM
+						    </button>
+						    <ul class="dropdown-menu ms-5">
+						      <li><a class="dropdown-item" href="AOKIEU.html">Áo Kiểu</a></li>
+						      <li><a class="dropdown-item" href="#">Quần SHORT</a></li>
+						      <li><a class="dropdown-item" href="#">Chân Váy</a></li>
+						      <li><a class="dropdown-item" href="#">Váy Đầm</a></li>
+						      <li><a class="dropdown-item" href="#">Áo Khoác Vải</a></li>
+						      <li><a class="dropdown-item" href="#">Áo Thun</a></li>
+						    </ul>
+						  </div>
+						</li>
+
+		      </ul>
+		      <ul class="navbar-nav">
+		        <li class="nav-item dropdown">
+		          <button class="btn dropdown-toggle border-body ms-5" data-bs-toggle="dropdown" aria-expanded="false">
+		            BÁN CHẠY NHẤT
+		          </button>
+		          <ul class="dropdown-menu dropdown-menu ms-5">
+		            <li><a class="dropdown-item" href="#">Quần SHORT</a></li>
+		            <li><a class="dropdown-item" href="#">Váy Đầm</a></li>
+		            <li><a class="dropdown-item" href="#">Áo Khoác Vải</a></li>
+		          </ul>
+		        </li>
+		      </ul>
+		      <ul class="navbar-nav">
+		        <li class="nav-item dropdown">
+
+		          <button class="btn dropdown-toggle border-body ms-5" data-bs-toggle="dropdown" aria-expanded="false">
+		            SALE
+		          </button>
+		          <ul class="dropdown-menu dropdown-menu ms-5">
+		            <li><a class="dropdown-item" href="#">Áo Khoác Vải</a></li>
+		            <li><a class="dropdown-item" href="#">Áo Thun</a></li>
+		            <li><a class="dropdown-item" href="#">Mũ</a></li>
+		          </ul>
+		        </li>
+		      </ul>
+		      <ul class="navbar-nav">
+		        <li class="nav-item dropdown">
+
+		          <button class="btn dropdown-toggle border-body ms-5" data-bs-toggle="dropdown" aria-expanded="false">
+		            TIN TỨC
+		          </button>
+		          <ul class="dropdown-menu dropdown-menu ms-5">
+		            <li><a class="dropdown-item" href="#">Blogs</a></li>
+		            <li><a class="dropdown-item" href="#">Về Xonxen</a></li>
+		            <li><a class="dropdown-item" href="#">Hệ thông cửa hàng</a></li>
+		            <li><a class="dropdown-item" href="#">Chính sách</a></li>
+		          </ul>
+		        </li>
+		      </ul>
+		      <ul class="navbar-nav">
+		        <li class="nav-item dropdown">
+
+		          <button class="btn dropdown-toggle border-body ms-5" data-bs-toggle="dropdown" aria-expanded="false">
+		            KIỂM TRA ĐƠN HÀNG
+		          </button>
+		          <ul class="dropdown-menu dropdown-menu ms-5">
+		            <li><a class="dropdown-item" href="#">Đã Đặt</a></li>
+		            <li><a class="dropdown-item" href="#">Chưa Đặt</a></li>
+		            <li><a class="dropdown-item" href="#">Chờ Xác Nhận</a></li>
+		          </ul>
+		        </li>
+		      </ul>
+		      <i class="bi bi-search-heart ms-5" id="exampleModal1"></i>
+		         <i class="bi bi-bag-heart ms-5" data-bs-toggle="modal" data-bs-target="#exampleModal" id="exampleModal1"></i>
+
+		        <!-- Button trigger modal -->
+		        <i class="bi bi-person-heart ms-5" id="exampleModal1"></i>
+		    </div>
+		  </div>
+		</nav>
+
+		<div>
+			<nav aria-label="breadcrumb">
+			  <ol class="breadcrumb" id="breadcrumb1">
+			    <li class="breadcrumb-item "><a href="./TRANGCHU.html" class="link-warning link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Home</a></li>
+			    <li class="breadcrumb-item"><a href="#" class="link-warning link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover"> Về Chúng Tôi </a></li>
+		      </ol>
+			</nav>
+		</div>
+	</div>
+	<!-- NỘI DUNG -->
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3">
+			<h5 class="text-center">DANH MỤC TRANG</h5>
+			<hr>
+				<p class="mt-3 ms-3">Tìm kiếm</p>
+				<p class="mt-3 ms-3">Liên hệ</p>
+				<p class="mt-3 ms-3">Về chúng tôi</p>
+				<p class="mt-3 ms-3">Hệ thống cửa hàng</p>
+				<p class="mt-3 ms-3">Điều khoản dịch vụ</p>
+				<div class="image-container">
+					<img src="https://file.hstatic.net/200000536797/file/860-994_1faf0159857f4e3db92fdabda3930c7c.jpg" class="img-fluid " alt="..." style="width: 20rem;">
+				</div>
+			</div>
+			<div class="col-md-9">
+				<h2>XONXEN SHOP VÀ HÀNH TRÌNH BẮT ĐẦU THƯƠNG HIỆU</h2>
+				<p class="mt-2">Để nói về thời trang, chúng ta sẽ có nhiều câu chuyện để bàn đến. Đơn giản là, thời trang không bao giờ có điểm dừng. Chính vì điều này, đã thôi thúc niềm đam mê thời trang trong chúng tôi. Cùng với đó, mong muốn bất kỳ phụ nữ nào cũng tự tin tỏa sáng với hình ảnh xinh đẹp nhất. Xonxen shop đã chính thức ra mắt vào năm 2009.</p>
+				<p>Năm 2009, có thể nói đây là một năm chưa phát triển nhiều về công nghệ. Tuy nhiên, với ngành thời trang thì luôn được chú ý đến nhiều, qua truyền miệng và các nơi mua sắm quen thuộc. Thế nên, chúng tôi tự tìm hiểu và phát triển dần dần, lúc đó cửa hàng Xonxen chỉ là một shop nhỏ tại gia. Chúng tôi hạnh phúc vì được làm điều mình thích và quan trọng là trao đến khách hàng giá trị tốt nhất.</p>
+				<p>Những năm tiếp theo, khi đã có chỗ đứng vững chắc trên thị trường thì chúng tôi bắt đầu mở rộng dần các chi nhánh trong Đà Nẵng và các tỉnh thành lân cận như Huế, Quảng Nam. Nhờ những kinh nghiệm từ cửa hàng đầu tiên, những cửa hàng kế tiếp nhanh chóng tiếp cận với khách hàng và mang đến làn sóng xu hướng thời trang trẻ trung, hiện đại. Liên tiếp những năm sau, Chúng tôi bắt đầu phủ rộng khắp tỉnh thành như: Quảng Ngãi, Quy Nhơn, Buôn ma thuột, Nha Trang, và mới đây là Hồ Chí Minh.</p>
+				
+				<p>Khách hàng của Xonxen shop đa phần là giới trẻ, tuổi từ 15 đến 27 tuổi. Hiện tại thì, sản phẩm chúng tôi cũng nâng cấp theo thời gian, nên độ tuổi tiếp cận giờ đây có thể lên đến 40 tuổi. Những mẫu sản phẩm luôn chú ý đến chất lượng, form dáng và hợp với thời trang xu hướng mới. Xonxen shop với sự dẫn dắt của chị Kim Anh là người sáng lập ra thương hiệu, chị luôn cố gắng truyền tải đến đội ngũ nhân viên những cách chăm sóc khách hàng tốt nhất, biết cách hỏi han khách hàng để tìm ra điều khách hàng mong muốn. Vậy nên, Xonxen không chỉ làm vừa lòng khách hàng bởi sản phẩm chất lượng, Xonxen shop còn khá nhanh nhạy với xu hướng tiếp cận khách hàng trẻ thông qua mạng xã hội. Mọi xu hướng mới, sản phẩm mới đều được cập nhật hàng tuần trên các trang mạng xã hội (Facebook, Instagram, Tiktok, Shopee…) để phục vụ khách hàng một cách nhanh nhất.</p>
+				<p>Chị Kim Anh - Founder Xonxen Shop đặc biệt tâm đắc đến việc việc chăm sóc khách hàng, và đây là một trong những tiêu chí mà cửa hàng đầu tư nhất trong những năm gần đây và đang thực hiện mỗi ngày.  "Để Xonxen muốn trở thành một thương hiệu lớn, chúng tôi luôn mong muốn nhận được những góp ý chân thành từ khách hàng".</p>
+				<p>Tổng kết một chặng hành trình 14 năm phát triển và xây dựng thương hiệu, Xonxen đã có được quả ngọt là 13 chi nhánh, phủ sóng ở nhiều tỉnh thành trong nước. Không dừng ở đó, chúng tôi sẽ củng cố, nhìn nhận và khai thác những điểm mạnh, xóa nhòa điểm yếu còn thiếu sót để thay vào những điều tốt đẹp cho thương hiệu.</p>
+				<p>Một chặng đường dài có các bạn, đồng nghiệp, khách hàng.. Mong rằng, trong mỗi hành trình phía trước, bạn vẫn luôn đồng hành cùng Xonxen.</p>
+				<p>-Trân trọng-</p>
+			</div>
+		</div>
+	</div>
+	<!-- **NỘI DUNG** -->
+	<hr>
+<!-- Cuối -->
+<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-3 mt-3">
+				<img src="https://cf.shopee.vn/file/444e7d610fd8407ff1b8529a41adcd6d" class="img-fluid" alt="ảnh logo" width="80"></a><br>
+				<b>Liên hệ: <a href="https://www.facebook.com/khai.Gdtg.trumuytin" class="link-warning">Khải Coder</a> <i class="bi bi-check2"></i></b><br>
+				<h6 class="mt-4">Địa chỉ: 123 Bà Triệu - TP Huế</h6>
+				<h6 class="mt-4">Điện thoại: 0359176205</h6><br>
+				<h6>Theo dõi chúng tôi</h6>
+				<i class="bi bi-facebook"></i>
+				<i class="bi bi-messenger"></i>
+				<i class="bi bi-whatsapp"></i>
+			</div>
+			<div class="col-md-3">
+				<h3 class="mt-3">Hỏi đáp</h3><hr>
+				<p class="mt-4"><a href="#" class="link-success link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Hướng dẫn mua hàng</a></p>
+				<p class="mt-4"><a href="#" class="link-success link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Hướng dẫn khuyến mãi</a></p>
+				<p class="mt-4"><a href="#" class="link-success link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Hướng dẫn đổi hàng</a></p>
+				<p class="mt-4"><a href="#" class="link-success link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Hướng dẫn thanh toán</a></p>
+				<p class="mt-4"><a href="#" class="link-success link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Hướng dẫn khác</a></p>
+			</div>
+			<div class="col-md-3">
+				<h3 class="mt-3">Khách hàng</h3><hr>
+				<p class="mt-4"><a href="#" class="link-success link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Thẻ khuyến mãi</a></p>
+				<p class="mt-4"><a href="#" class="link-success link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Đăng kí tài khoản</a></p>
+				<p class="mt-4"><a href="#" class="link-success link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Chính sách</a></p>
+				<p class="mt-4"><a href="#" class="link-success link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Quà tặng tri ân</a></p>
+				<p class="mt-4"><a href="#" class="link-success link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Sản phẩm khác</a></p>
+			</div>
+			<div class="col-md-3">
+				<h3 class="mt-3">Thanh Toán</h3><hr>
+				<label for="exampleDataList" class="form-label">Email</label>
+				<input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Nhập email của bạn...">
+				<datalist id="datalistOptions">
+				  <option value="@gmail"/>
+				  <option value=".com"/>
+				</datalist>
+				<p><a href="#" class="link-warning link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Chấp nhận thanh toán</a></p>
+				<img src="https://scontent.fdad3-5.fna.fbcdn.net/v/t1.15752-9/352456783_699836118569265_2601653475588846143_n.png?_nc_cat=111&ccb=1-7&_nc_sid=ae9488&_nc_ohc=QmhcYhDhV5IAX9cyLhM&_nc_ht=scontent.fdad3-5.fna&oh=03_AdTdgEZxU6-BzdjRj_MboKXgD7v2a_dl7UqQOPUBKGJnCQ&oe=64A7D391">
+			</div>
+		</div>
+	</div>
+</body>
+</html>

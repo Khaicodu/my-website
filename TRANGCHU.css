@@ -1,0 +1,371 @@
+
+/*hiệu ứng phóng zom hình ảnh*/
+.img-zoomable {
+  transition: transform 0.3s;
+}
+
+.img-zoomable:hover {
+  transform: scale(0.9);
+}
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+#breadcrumb1{
+  margin-top: 5rem;
+}
+#exampleModal1{
+  transition: transform 0.2s;
+}
+#exampleModal1:hover{
+  transform: scale(1.9);
+}
+.bst1{
+  color: black;
+}
+.bst1:hover{
+  color: #FF4500;
+}
+.bst2{
+  color: black;
+}
+.bst2:hover{
+  color: #FF4500;
+}
+.bst3{
+  color: black;
+}
+.bst3:hover{
+  color: #FF4500;
+}
+.custom-hr {
+    height: 3px;
+    width: 80px;
+    background-color: #FF4500;
+    margin: 0 auto;
+}
+a{
+text-decoration: none;
+color: black;
+}
+/*Làm cho cái moldo*/
+#exampleModalLabel2 {
+ outline: none;
+ cursor: pointer;
+ border: none;
+ padding: 0.9rem 2rem;
+ margin: 0;
+ font-family: inherit;
+ font-size: inherit;
+ position: relative;
+ display: inline-block;
+ letter-spacing: 0.05rem;
+ font-weight: 500;
+ font-size: 12px;
+ border-radius: 20px;
+ overflow: hidden;
+ background: #FF8C00;
+ color: black;
+}
+
+#exampleModalLabel2 span {
+ position: relative;
+ z-index: 10;
+ transition: color 0.4s;
+}
+
+#exampleModalLabel2:hover span {
+ color: black;
+}
+
+#exampleModalLabel2::before,
+#exampleModalLabel2::after {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ z-index: 0;
+}
+
+#exampleModalLabel2::before {
+ content: "";
+ background: #FFFFFF;
+ width: 120%;
+ left: -10%;
+ transform: skew(30deg);
+ transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+}
+
+#exampleModalLabel2:hover::before {
+ transform: translate3d(100%, 0, 0);
+}
+/*zom ảnh*/
+.image-container {
+overflow: hidden; /* Để ẩn phần ngoài của hình ảnh khi zoom */
+position: relative; /* Để xác định vị trí của phần tử con */
+}
+
+.image-container img {
+width: 100%; /* Đảm bảo hình ảnh lấp đầy phần tử cha */
+transition: transform 5s; /* Áp dụng hiệu ứng chuyển đổi trong 0.5 giây */
+}
+
+.image-container:hover img {
+transform: scale(1.2); /* Áp dụng hiệu ứng zoom */
+}
+button.overlay-text{
+transition: 1.2s;
+}
+button.overlay-text:hover{
+  transition: scale(0.9);
+  background: red;
+}
+.lazyloaded2 {
+filter: blur(3px) brightness(95%);
+}
+#lazyloaded1{
+position: relative;
+display: inline-block;
+}
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.5); /* Màu nền chữ */
+  padding: 10px;
+  text-align: center;
+  z-index: 1;
+}
+
+.overlay-text h2 {
+  color: #000; /* Màu chữ */
+}
+/*Hiệu ứng button*/
+#buttonAMS {
+ display: inline-block;
+ padding: 12px 24px;
+ border: 1px solid #4f4f4f;
+ border-radius: 4px;
+ transition: all 0.2s ease-in;
+ 
+ overflow: hidden;
+ font-size: 19px;
+ color: black;
+ z-index: 1;
+}
+#buttonAMS:before {
+ content: "";
+ position: absolute;
+ left: 50%;
+ transform: translateX(-50%) scaleY(1) scaleX(1.25);
+ top: 100%;
+ width: 140%;
+ height: 180%;
+ background-color: rgba(0, 0, 0, 0.05);
+ border-radius: 50%;
+ display: block;
+ transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+ z-index: -1;
+}
+
+#buttonAMS:after {
+ content: "";
+ position: absolute;
+ left: 55%;
+ transform: translateX(-50%) scaleY(1) scaleX(1.45);
+ top: 180%;
+ width: 160%;
+ height: 190%;
+ background-color: #39bda7;
+ border-radius: 50%;
+ display: block;
+ transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+ z-index: -1;
+}
+
+#buttonAMS:hover {
+ color: #ffffff;
+ border: 1px solid #39bda7;
+}
+
+#buttonAMS:hover:before {
+ top: -35%;
+ background-color: #FF4500;
+ transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+#buttonAMS:hover:after {
+ top: -45%;
+ background-color: #FF8C00;
+ transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+.image-container2 {
+  position: relative;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.7) 50%, rgba(255, 255, 255, 0) 100%);
+  opacity: 0;
+  transform: translate(-100%, -100%);
+  transition: opacity 0.5s, transform 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: white;
+}
+
+.image-container2:hover .overlay {
+  opacity: 1;
+  transform: translate(100%, 100%);
+}
+
+.card-img-top {
+  transition: filter 0.5s;
+}
+
+.image-container:hover .card-img-top {
+  filter: brightness(70%);
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+/*.container {
+  display: flex;
+  flex-wrap: wrap;
+   thêm các thuộc tính flexbox khác để tự động điều chỉnh layout
+}*/
+img {
+  max-width: 100%;
+  height: auto;
+}
+/* Ví dụ sử dụng media query để điều chỉnh font-size cho màn hình nhỏ hơn 768px */
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.product {
+  width: 50%; /* 2 hàng dọc, mỗi hàng chiếm 50% chiều rộng */
+  /* Thêm các kiểu dáng sản phẩm, ví dụ như margin, padding, ... */
+}
+
+/* Sử dụng media query để điều chỉnh khi vào chế độ điện thoại */
+@media screen and (max-width: 768px) {
+  .product {
+    width: 100%; /* Một hàng dọc, mỗi sản phẩm chiếm 100% chiều rộng */
+     max-width: 10rem;
+     margin-left: 10px;
+     margin-bottom: 10px;
+  }
+  #chu1{
+    font-size: 15px;
+  }
+  #product2{
+    max-width: 10rem;
+    font-size: 12px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+  }
+  .card-title{
+    font-size: 12px;
+  }
+  .card-text{
+    font-size: 15px;
+    margin-bottom: 3px;
+  }
+  #exampleModal{
+    font-size: 20px;
+
+  }
+  #card-text1{
+    font-size: 12px;
+  }
+  .rounded-3{
+    margin-top: -50px;
+  }
+  .social-container{
+  margin: 2px;
+  
+  text-align: end;
+  }
+  #exampleModalLabel2{
+    padding: 10px;
+    margin-left: 2rem;
+    margin-right: 2rem ;
+  }
+  .modal-content{
+    max-width: 25rem;
+  }
+  .modal-content img{
+    max-width: 5rem;
+  }
+  #exampleModalLabel5{
+    font-size: 15px;
+    
+    max-height: 0.5rem;
+
+  }
+
+}
+
+@media screen and (min-width: 1000px) {
+  .product {
+    width: 100%; /* Một hàng dọc, mỗi sản phẩm chiếm 100% chiều rộng */
+    max-width: 20rem;
+
+  }
+  #product2{
+    margin-left: 50px;
+  }
+  #product3{
+    margin-left: 10px;
+  }
+  #exampleModal3{
+    font-size: 35px;
+
+  }
+  .social-container{
+  margin: 20px 0;
+  margin-top: 5rem;
+  text-align: end;
+  }
+  input{
+    margin-top: 5rem;
+  }
+  #exampleModalLabel2{
+    
+    margin-left: 3.3rem;
+    margin-right: 2rem ;
+  }
+  #exampleModalLabel5{
+   font-size: 18px;
+   margin-top: -5px;
+   max-height: 1rem; 
+
+  }
+  .rounded-pill{
+    max-width: 25rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+

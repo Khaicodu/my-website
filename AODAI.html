@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>XONXEN</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+	<link rel="stylesheet" type="text/css" href="./AOKIEU.css">
+	<link rel="stylesheet" href="https://cdn.leanhduc.pro.vn/utilities/animation/shake-effect/style.css"/>
+	
+</head>
+<body>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js">
+	$(document).ready(function() {
+  $('.dropdown').hover(function() {
+    $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
+  }, function() {
+    $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
+  });
+});
+
+</script>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content text-center">
+      <div class="modal-header bg-light">
+        <h1 class="modal-title text-center fs-5 " id="exampleModalLabel">Giỏ hàng</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body bg-warning-subtle">
+        <div class="rung"><i class="bi bi-cart4 fs-1"></i><br></div>
+        Hiện chưa có sản phẩm
+      </div>
+      <span>
+     		<p class="mt-2 text-start mb-0 ms-1">TỔNG TIỀN: <i class="text-danger float-end mx-3">0đ</i></p><br>
+     	</span>
+      <div class="text-center modal-footer">
+        <button type="button" class="btn btn-secondary  border border-warning " id="exampleModalLabel2"><span>VOUCHER <i class="bi bi-percent"></i></span></button>
+        <button type="button" class="btn btn-secondary  border border-warning" id="exampleModalLabel2"><span>THANH TOÁN</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+		        <!-- *** -->
+
+	<div class="container">
+		<nav class="navbar navbar-expand-lg fixed-top bg-body-tertiary">
+  <div class="container-fluid">
+  	<div class="col"></div>
+    <a class="navbar-brand" href="#"><img src="https://file.hstatic.net/200000536797/file/logo_xon_xen_75_aa170c5c14ee4526_a1e017091880419d8f68ac28aff57996.png" class="img-fluid" alt="ảnh logo" width="50"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+		    <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+		      <ul class="navbar-nav">
+		        <li class="nav-item dropdown">
+						  <div class="dropdown">
+						    <button class="btn dropdown-toggle border-body ms-5" data-bs-toggle="dropdown" aria-expanded="false">
+						      SẢN PHẨM
+						    </button>
+						    <ul class="dropdown-menu ms-5">
+						      <li><a class="dropdown-item" href="#">Áo Jean</a></li>
+						      <li><a class="dropdown-item" href="#">Quần SHORT</a></li>
+						      <li><a class="dropdown-item" href="#">Chân Váy</a></li>
+						      <li><a class="dropdown-item" href="#">Váy Đầm</a></li>
+						      <li><a class="dropdown-item" href="#">Áo Khoác Vải</a></li>
+						      <li><a class="dropdown-item" href="#">Áo Thun</a></li>
+						    </ul>
+						  </div>
+						</li>
+
+		      </ul>
+		      <ul class="navbar-nav">
+		        <li class="nav-item dropdown">
+		          <button class="btn dropdown-toggle border-body ms-5" data-bs-toggle="dropdown" aria-expanded="false">
+		            BÁN CHẠY NHẤT
+		          </button>
+		          <ul class="dropdown-menu dropdown-menu ms-5">
+		            <li><a class="dropdown-item" href="#">Quần SHORT</a></li>
+		            <li><a class="dropdown-item" href="#">Váy Đầm</a></li>
+		            <li><a class="dropdown-item" href="#">Áo Khoác Vải</a></li>
+		          </ul>
+		        </li>
+		      </ul>
+		      <ul class="navbar-nav">
+		        <li class="nav-item dropdown">
+
+		          <button class="btn dropdown-toggle border-body ms-5" data-bs-toggle="dropdown" aria-expanded="false">
+		            SALE
+		          </button>
+		          <ul class="dropdown-menu dropdown-menu ms-5">
+		            <li><a class="dropdown-item" href="#">Áo Khoác Vải</a></li>
+		            <li><a class="dropdown-item" href="#">Áo Thun</a></li>
+		            <li><a class="dropdown-item" href="#">Mũ</a></li>
+		          </ul>
+		        </li>
+		      </ul>
+		      <ul class="navbar-nav">
+		        <li class="nav-item dropdown">
+
+		          <button class="btn dropdown-toggle border-body ms-5" data-bs-toggle="dropdown" aria-expanded="false">
+		            TIN TỨC
+		          </button>
+		          <ul class="dropdown-menu dropdown-menu ms-5">
+		            <li><a class="dropdown-item" href="#">Blogs</a></li>
+		            <li><a class="dropdown-item" href="#">Về Xonxen</a></li>
+		            <li><a class="dropdown-item" href="#">Hệ thông cửa hàng</a></li>
+		            <li><a class="dropdown-item" href="#">Chính sách</a></li>
+		          </ul>
+		        </li>
+		      </ul>
+		      <ul class="navbar-nav">
+		        <li class="nav-item dropdown">
+
+		          <button class="btn dropdown-toggle border-body ms-5" data-bs-toggle="dropdown" aria-expanded="false">
+		            KIỂM TRA ĐƠN HÀNG
+		          </button>
+		          <ul class="dropdown-menu dropdown-menu ms-5">
+		            <li><a class="dropdown-item" href="#">Đã Đặt</a></li>
+		            <li><a class="dropdown-item" href="#">Chưa Đặt</a></li>
+		            <li><a class="dropdown-item" href="#">Chờ Xác Nhận</a></li>
+		          </ul>
+		        </li>
+		      </ul>
+		      <i class="bi bi-search-heart ms-5" id="exampleModal1"></i>
+		         <i class="bi bi-bag-heart ms-5" data-bs-toggle="modal" data-bs-target="#exampleModal" id="exampleModal1"></i>
+
+		        <!-- Button trigger modal -->
+		        <i class="bi bi-person-heart ms-5" id="exampleModal1"></i>
+		    </div>
+		  </div>
+		</nav>
+
+		<div>
+			<nav aria-label="breadcrumb">
+			  <ol class="breadcrumb" id="breadcrumb1">
+			    <li class="breadcrumb-item "><a href="TRANGCHU.html" class="link-warning link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Trang Chủ</a></li>
+			    <li class="breadcrumb-item "><a href="#" class="link-warning link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Áo Dài</a></li>
+			    <li class="breadcrumb-item"><a href="GIAOHANG.html" class="link-warning link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover"> Giao Hàng </a></li>
+
+			   
+		      </ol>
+			</nav>
+		</div>
+	</div>
+	
+	<!--CAROUSEL-->
+
+	<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://hacuc.vn/wp-content/uploads/2023/02/z4123284861295_4ea9040e63573171b9860d6ac8d09d1a-2048x779.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5 class="text-warning">XONXEN ÁO DÀI</h5>
+        <p class="text-secondary">Cùng XonXen sắm đồ tết nào</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="https://hacuc.vn/wp-content/uploads/2023/03/z4165625780004_969b0e24dfb0847ceedf8a0100d27544-1-2048x779.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5 class="text-warning">XONXEN ÁO DÀI</h5>
+        <p class="text-secondary">Cùng XonXen sắm đồ tết nào</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="https://hacuc.vn/wp-content/uploads/2023/02/z4123284861295_4ea9040e63573171b9860d6ac8d09d1a-2048x779.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5 class="text-warning">XONXEN ÁO DÀI</h5>
+        <p class="text-secondary">Cùng XonXen sắm đồ tết nào</p>
+      </div>
+    </div>
+    
+    
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<!-- BODY -->
+	<div class="container mt-5">
+		<div class="row">
+			<div class="col-md-10"><h2>ÁO DÀI</h2></div>
+			<div class="col-md-2">
+				<div class="input-group">
+				  <select class="form-select border-0" id="inputGroupSelect04" aria-label="Example select with button addon">
+				    <option selected>Mới nhất</option>
+				    <option value="1">Sản phẩm nổi bật</option>
+				    <option value="2">Giá: Tăng dần</option>
+				    <option value="3">Giá: Giảm dần</option>
+				    <option value="4">Bán chạy nhất</option>
+				  </select>
+				</div>
+				<hr class="mt-2">
+			</div>
+		</div>
+	</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $(".image-container").mouseenter(function() {
+      $(this).find(".hover-image").fadeTo(200, 1);
+});
+
+    $(".image-container").mouseleave(function() {
+    $(this).find(".hover-image").fadeTo(200, 0);
+  });
+});
+
+  </script>
+
+<!--  -->
+<!-- sản phẩm -->
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-1"></div>
+		<div class="col-md-1">
+      
+		  <h1 class="fs-6">BỘ SƯU TẬP</h1>
+      <hr>
+      <a href="#"><p id="chu">ÁO DÀI</p></a>
+      <a href="#"><p id="chu">ÁO DÀI</p></a>
+      <a href="#"><p id="chu">ÁO DÀI CƯỚI</p></a>
+      <a href="#"><p id="chu">ÁO DÀI TẾT</p></a>
+		  
+    </div>
+		<div class="col-md-9">
+		
+			<!-- sản phẩm -->
+<div class="container mt-5">
+    <div class="product-container">
+
+  <div class="card product" id="product2">
+  <div class="image-container">
+    <img src="https://hacuc.vn/wp-content/uploads/2023/02/nienduyen2-600x900.jpg" alt="Image 1">
+    <img src="https://hacuc.vn/wp-content/uploads/2023/02/nienduyen1.jpg" alt="Image 2" class="hover-image">
+    <div class="overlay"></div>
+  </div>
+    <div class="card-body">
+      <h5 class="card-title ">Áo Dài Niên Duyên</h5>
+      <p class="card-text text-danger">2.500.000đ<i class=" ms-5 text-warning">Xem ngay</i></p>
+    </div>
+  </div>
+  
+  <div class="card product" id="product2">
+  <div class="image-container">
+       <img src="https://hacuc.vn/wp-content/uploads/2023/02/huonghan4.jpg" alt="Image 1">
+       <img src="https://hacuc.vn/wp-content/uploads/2023/02/huonghan3.jpg" alt="Image 2" class="hover-image">
+       <div class="overlay"></div>
+  </div>
+    <div class="card-body">
+        <h5 class="card-title ">Áo Dài Hương Hàn</h5>
+        <p class="card-text  text-danger">2.300.000đ<a href=""><i class="ms-5 text-warning">Xem ngay</i></a></p>
+    </div>
+  </div>
+
+  <div class="card product" id="product2">
+  <div class="image-container">
+       <img src="https://hacuc.vn/wp-content/uploads/2023/02/honghanh4-600x900.jpg" alt="Image 1">
+       <img src="https://hacuc.vn/wp-content/uploads/2023/02/honghanh3.jpg" alt="Image 2" class="hover-image">
+       <div class="overlay"></div>
+  </div>
+  <div class="card-body">
+  <h5 class="card-title ">Áo Dài Phùng Hoan</h5>
+    <p class="card-text  text-danger">3.000.000đ<i class="ms-5 text-warning">Xem ngay</i></p>
+  </div>
+  </div>
+
+  <div class="card product" id="product2">
+  <div class="image-container">
+       <img src="https://hacuc.vn/wp-content/uploads/2023/02/tucmach4-600x900.jpg" alt="Image 1">
+       <img src="https://hacuc.vn/wp-content/uploads/2023/02/tucmach3.jpg" alt="Image 2" class="hover-image">
+       <div class="overlay"></div>
+  </div>
+  <div class="card-body">
+  <h5 class="card-title ">Áo Dài Túc Mạch</h5>
+    <p class="card-text  text-danger">2.100.000đ<i class="ms-5 text-warning">Xem ngay</i></p>
+  </div>
+  </div>
+
+      
+<!-- s2 -->
+  
+  <div class="card product" id="product2">
+  <div class="image-container">
+       <img src="https://hacuc.vn/wp-content/uploads/2023/02/honghanh5-600x900.jpg" alt="Image 1">
+       <img src="https://hacuc.vn/wp-content/uploads/2023/02/honghanh6.jpg" alt="Image 2" class="hover-image">
+       <div class="overlay"></div>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title ">Áo Dài Hồng Hạnh</h5>
+    <p class="card-text  text-danger">2.600.000đ<a href="CHITIETaodai.html"><i class="ms-5 text-warning">Xem ngay</i></a></p>
+  </div>
+  </div>
+  <div class="card product" id="product2">
+  <div class="image-container">
+       <img src="https://hacuc.vn/wp-content/uploads/2023/02/tucmach1.jpg" alt="Image 1">
+       <img src="https://hacuc.vn/wp-content/uploads/2023/02/honghanh9.jpg" alt="Image 2" class="hover-image">
+       <div class="overlay"></div>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Áo Dài Minh Anh</h5>
+    <p class="card-text  text-danger">3.200.000đ<i class="ms-5 text-warning">Xem ngay</i></p>
+  </div>
+  </div>
+  <div class="card product" id="product2">
+  <div class="image-container">
+       <img src="https://hacuc.vn/wp-content/uploads/2023/02/honghanh2.jpg" alt="Image 1">
+       <img src="https://hacuc.vn/wp-content/uploads/2023/02/nienduyen4.jpg" alt="Image 2" class="hover-image">
+       <div class="overlay"></div>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Áo Dài Tâm Phúc</h5>
+    <p class="card-text text-danger">2.600.000đ<i class="ms-5 text-warning">Xem ngay</i></p>
+  </div>
+  </div>
+  <div class="card product" id="product2">
+  <div class="image-container">
+       <img src="https://hacuc.vn/wp-content/uploads/2023/02/huonghan2.jpg" alt="Image 1">
+       <img src="https://hacuc.vn/wp-content/uploads/2023/02/honghanh7.jpg" alt="Image 2" class="hover-image">
+       <div class="overlay"></div>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Áo Dài Khả Hy</h5>
+    <p class="card-text text-danger">1.500.000đ<i class="ms-5 text-warning">Xem ngay</i></p>
+  </div>
+  </div>
+      </div>
+  </div>
+
+<!-- **sản phẩm** -->
+   </div>
+   <!-- **Xem thêm sản phẩm khác** -->
+<!-- **BODY** -->
+			<nav aria-label="...">
+			  <ul class="pagination pagination-sm justify-content-center mt-3">
+			    <li class="page-item active" aria-current="page">
+			      <span class="page-link">1</span>
+			    </li>
+			    <li class="page-item"><a class="page-link" href="#">2</a></li>
+			    <li class="page-item"><a class="page-link" href="#">3</a></li>
+			  </ul>
+			</nav>
+<hr class="mt-4">
+</div>
+</div>
+<!-- Cuối -->
+<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-3 mt-3">
+				<img src="https://cf.shopee.vn/file/444e7d610fd8407ff1b8529a41adcd6d" class="img-fluid" alt="ảnh logo" width="80"></a><br>
+				<b>Liên hệ: <a href="https://www.facebook.com/khai.Gdtg.trumuytin" class="link-warning">Khải Coder</a> <i class="bi bi-check2"></i></b><br>
+				<h6 class="mt-4">Địa chỉ: 123 Bà Triệu - TP Huế</h6>
+				<h6 class="mt-4">Điện thoại: 0359176205</h6><br>
+				<h6>Theo dõi chúng tôi</h6>
+				<i class="bi bi-facebook"></i>
+				<i class="bi bi-messenger"></i>
+				<i class="bi bi-whatsapp"></i>
+			</div>
+			<div class="col-md-3">
+				<h3 class="mt-3">Hỏi đáp</h3><hr>
+				<p class="mt-4"><a href="#" class="link-success link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Hướng dẫn mua hàng</a></p>
+				<p class="mt-4"><a href="#" class="link-success link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Hướng dẫn khuyến mãi</a></p>
+				<p class="mt-4"><a href="#" class="link-success link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Hướng dẫn đổi hàng</a></p>
+				<p class="mt-4"><a href="#" class="link-success link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Hướng dẫn thanh toán</a></p>
+				<p class="mt-4"><a href="#" class="link-success link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Hướng dẫn khác</a></p>
+			</div>
+			<div class="col-md-3">
+				<h3 class="mt-3">Khách hàng</h3><hr>
+				<p class="mt-4"><a href="#" class="link-success link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Thẻ khuyến mãi</a></p>
+				<p class="mt-4"><a href="#" class="link-success link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Đăng kí tài khoản</a></p>
+				<p class="mt-4"><a href="#" class="link-success link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Chính sách</a></p>
+				<p class="mt-4"><a href="#" class="link-success link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Quà tặng tri ân</a></p>
+				<p class="mt-4"><a href="#" class="link-success link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Sản phẩm khác</a></p>
+			</div>
+			<div class="col-md-3">
+				<h3 class="mt-3">Thanh Toán</h3><hr>
+				<label for="exampleDataList" class="form-label">Email</label>
+				<input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Nhập email của bạn...">
+				<datalist id="datalistOptions">
+				  <option value="@gmail"/>
+				  <option value=".com"/>
+				</datalist>
+				<p><a href="#" class="link-warning link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Chấp nhận thanh toán</a></p>
+				<img src="https://scontent.fdad3-5.fna.fbcdn.net/v/t1.15752-9/352456783_699836118569265_2601653475588846143_n.png?_nc_cat=111&ccb=1-7&_nc_sid=ae9488&_nc_ohc=QmhcYhDhV5IAX9cyLhM&_nc_ht=scontent.fdad3-5.fna&oh=03_AdTdgEZxU6-BzdjRj_MboKXgD7v2a_dl7UqQOPUBKGJnCQ&oe=64A7D391">
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>

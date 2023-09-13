@@ -1,0 +1,149 @@
+.img-zoomable {
+  transition: transform 0.3s;
+}
+
+.img-zoomable:hover {
+  transform: scale(0.9);
+}
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+#breadcrumb1{
+	margin-top: 5rem;
+}
+#exampleModal1{
+	transition: transform 0.2s;
+}
+#exampleModal1:hover{
+	transform: scale(1.9);
+}
+.custom-hr {
+    height: 3px;
+    width: 80px;
+    background-color: #FF4500;
+    margin: 0 auto;
+}
+#exampleModalLabel2 {
+ outline: none;
+ cursor: pointer;
+ border: none;
+ padding: 0.9rem 2rem;
+ margin: 0;
+ font-family: inherit;
+ font-size: inherit;
+ position: relative;
+ display: inline-block;
+ letter-spacing: 0.05rem;
+ font-weight: 500;
+ font-size: 12px;
+ border-radius: 20px;
+ overflow: hidden;
+ background: #FF8C00;
+ color: black;
+}
+
+#exampleModalLabel2 span {
+ position: relative;
+ z-index: 10;
+ transition: color 0.4s;
+}
+
+#exampleModalLabel2:hover span {
+ color: black;
+}
+
+#exampleModalLabel2::before,
+#exampleModalLabel2::after {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ z-index: 0;
+}
+
+#exampleModalLabel2::before {
+ content: "";
+ background: #FFFFFF;
+ width: 120%;
+ left: -10%;
+ transform: skew(30deg);
+ transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+}
+
+#exampleModalLabel2:hover::before {
+ transform: translate3d(100%, 0, 0);
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  /* thêm các thuộc tính flexbox khác để tự động điều chỉnh layout */
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+/* Ví dụ sử dụng media query để điều chỉnh font-size cho màn hình nhỏ hơn 768px */
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.product {
+  width: 50%; /* 2 hàng dọc, mỗi hàng chiếm 50% chiều rộng */
+  /* Thêm các kiểu dáng sản phẩm, ví dụ như margin, padding, ... */
+}
+
+/* Sử dụng media query để điều chỉnh khi vào chế độ điện thoại */
+@media screen and (max-width: 768px) {
+  .product {
+    width: 100%; /* Một hàng dọc, mỗi sản phẩm chiếm 100% chiều rộng */
+    margin-top: 10px;
+    margin-left: 15px;
+    max-width: 10rem;
+  }
+  .card-title{
+    font-size: 12px;
+  }
+  .text-warning{
+    margin-top: -10px;
+    margin-bottom: -10px;
+    font-size: 12px;
+  }
+  .card-text{
+    font-size: 12px;
+  }
+  #exampleModalLabel2{
+    padding: 10px;
+    margin-left: 2rem;
+    margin-right: 2rem ;
+  }
+  .modal-content{
+    max-width: 25rem;
+  }
+  .modal-content img{
+    max-width: 5rem;
+  }
+
+}
+
+@media screen and (min-width: 1000px) {
+  .product {
+    width: 100%; /* Một hàng dọc, mỗi sản phẩm chiếm 100% chiều rộng */
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+  .card-title{
+    font-size: 15px;
+  }
+  .text-warning{
+    margin-top: -10px;
+    margin-bottom: -10px;
+  }
+}
+

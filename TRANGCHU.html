@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>XONXEN</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+	<link rel="stylesheet" type="text/css" href="./TRANGCHU.css">
+	<link rel="stylesheet" href="https://cdn.leanhduc.pro.vn/utilities/animation/shake-effect/style.css"/>
+	
+</head>
+<body>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js">
+	$(document).ready(function() {
+  $('.dropdown').hover(function() {
+    $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
+  }, function() {
+    $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
+  });
+});
+
+</script>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content text-center">
+      <div class="modal-header bg-light">
+        <h1 class="modal-title text-center fs-5 " id="exampleModalLabel">Giỏ hàng</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body bg-warning-subtle">
+        <div class="rung"><i class="bi bi-cart4 fs-1"></i><br></div>
+        Hiện chưa có sản phẩm
+      </div>
+      <span>
+     		<p class="mt-2 text-start mb-0 ms-1">TỔNG TIỀN: <i class="text-danger float-end mx-3">0đ</i></p><br>
+     	</span>
+      <div class="text-center modal-footer">
+        <button type="button" class="btn btn-secondary  border border-warning " id="exampleModalLabel2"><span>VOUCHER <i class="bi bi-percent"></i></span></button>
+        <button type="button" class="btn btn-secondary  border border-warning" id="exampleModalLabel2"><span>THANH TOÁN</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+		        <!-- *** -->
+		        <!-- ModalUSe -->
+<div class="modal fade" id="exampleModalRR" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-light">
+        <h1 class="modal-title text-center fs-5 " id="exampleModalLabel"><div class="rung" style="display: inline-block;"><i class="bi bi-person-heart"></i></div>Tài khoản</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body bg-warning-subtle">
+        
+        	<!-- Tên: Khải coder <br>
+        	Email: lequangkhaiqt@gmail.com <br>
+        	Số điện thoại: 0359176205 <br>
+        	Địa chỉ: 30-109 Đặng Huy Trứ - TP Huế <br>
+        	Thanh viên: Kim Cương <br>
+        	Tổng chi tiêu: 36.200.000đ <br> -->
+
+        <div class="row">
+        	<div class="col-md-3">
+        		<img src="https://scontent.fdad3-4.fna.fbcdn.net/v/t39.30808-6/350503588_587929559838434_8501317987653811320_n.jpg?_nc_cat=104&cb=99be929b-3346023f&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=GwnJFgqgbQEAX9M6v1S&_nc_ht=scontent.fdad3-4.fna&oh=00_AfDrIXMA94i2th60LpE7Vi9yrb-PR-ZgnFx3f-Gs32R_SA&oe=64C67266" class="img-fluid rounded-pill border border-2 border-info">
+        	</div>
+        	<div class="col-md-9">
+        		<p><i class="bi bi-person-check-fill "> Tên: Khải coder</i></p>
+        		<p><i class="bi bi-envelope "> Email: lequangkhaiqt@gmail.com</i></p>
+        		<p><i class="bi bi-telephone-fill "> Số điện thoại: 0359176205</i></p>
+        		<p><i class="bi bi-geo-alt-fill "> Địa chỉ: 30-109 Đặng Huy Trứ - TP Huế</i></p>
+        		<p><i class="bi bi-gem "> Thanh viên: Kim Cương</i></p>
+        		<p><i class="bi bi-cash-coin " > Tổng chi tiêu: <b class="text-danger">36.200.000đ</b></i></p>
+        		<p>Chi tiêu tháng</p>
+        		<div class="progress" role="progressbar" aria-label="Danger example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+					  	<div class="progress-bar bg-danger" style="width: 75%">7.600.000đ/10.000.000đ</div>
+						</div>
+        	</div>
+        </div>
+      </div>
+      <div class="text-center modal-footer">
+        <button type="button" class="btn btn-secondary  border border-warning " id="exampleModalLabel2"><span>VOUCHER <i class="bi bi-percent"></i></span></button>
+        <button type="button" class="btn btn-secondary border border-warning" id="exampleModalLabel2"><span>ĐĂNG XUẤT</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+		        <!-- *** -->
+<!-- ModalThem -->
+<div class="modal fade " id="exampleModalE" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    
+      <div class="modal-header rounded-pill bg-success-subtle" >
+        <h1 class="modal-title w-50" id="exampleModalLabel5" style="margin-left: 30%; max-width: ;">Đã thêm vào giỏ hàng</h1>
+        
+      </div>
+    
+  </div>
+</div>
+		        <!-- *** -->
+		        
+
+	<div class="container">
+		<nav class="navbar navbar-expand-lg fixed-top bg-body-tertiary">
+  <div class="container-fluid">
+  	<div class="col"></div>
+    <a class="navbar-brand" href="#"><img src="https://file.hstatic.net/200000536797/file/logo_xon_xen_75_aa170c5c14ee4526_a1e017091880419d8f68ac28aff57996.png" class="img-fluid" alt="ảnh logo" width="50"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+		    <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+		      <ul class="navbar-nav">
+		        <li class="nav-item dropdown">
+						  <div class="dropdown">
+						    <button class="btn dropdown-toggle border-body ms-5" data-bs-toggle="dropdown" aria-expanded="false">
+						      SẢN PHẨM
+						    </button>
+						    <ul class="dropdown-menu ms-5">
+						      <li><a class="dropdown-item" href="AOKIEU.html">Áo Kiểu</a></li>
+						      <li><a class="dropdown-item" href="AODAI.html">Áo Dài</a></li>
+						      <li><a class="dropdown-item" href="#">Chân Váy</a></li>
+						      <li><a class="dropdown-item" href="#">Váy Đầm</a></li>
+						      <li><a class="dropdown-item" href="#">Áo Khoác Vải</a></li>
+						      <li><a class="dropdown-item" href="#">Áo Thun</a></li>
+						    </ul>
+						  </div>
+						</li>
+
+		      </ul>
+		      <ul class="navbar-nav">
+		        <li class="nav-item dropdown">
+		          <button class="btn dropdown-toggle border-body ms-5" data-bs-toggle="dropdown" aria-expanded="false">
+		            BÁN CHẠY NHẤT
+		          </button>
+		          <ul class="dropdown-menu dropdown-menu ms-5">
+		            <li><a class="dropdown-item" href="#">Quần SHORT</a></li>
+		            <li><a class="dropdown-item" href="#">Váy Đầm</a></li>
+		            <li><a class="dropdown-item" href="#">Áo Khoác Vải</a></li>
+		          </ul>
+		        </li>
+		      </ul>
+		      <ul class="navbar-nav">
+		        <li class="nav-item dropdown">
+
+		          <button class="btn dropdown-toggle border-body ms-5" data-bs-toggle="dropdown" aria-expanded="false">
+		            SALE
+		          </button>
+		          <ul class="dropdown-menu dropdown-menu ms-5">
+		            <li><a class="dropdown-item" href="#">Áo Khoác Vải</a></li>
+		            <li><a class="dropdown-item" href="#">Áo Thun</a></li>
+		            <li><a class="dropdown-item" href="#">Mũ</a></li>
+		          </ul>
+		        </li>
+		      </ul>
+		      <ul class="navbar-nav">
+		        <li class="nav-item dropdown">
+
+		          <button class="btn dropdown-toggle border-body ms-5" data-bs-toggle="dropdown" aria-expanded="false">
+		            TIN TỨC
+		          </button>
+		          <ul class="dropdown-menu dropdown-menu ms-5">
+		            <li><a class="dropdown-item" href="#">Blogs</a></li>
+		            <li><a class="dropdown-item" href="#">Về Xonxen</a></li>
+		            <li><a class="dropdown-item" href="#">Hệ thông cửa hàng</a></li>
+		            <li><a class="dropdown-item" href="#">Chính sách</a></li>
+		          </ul>
+		        </li>
+		      </ul>
+		      <ul class="navbar-nav">
+		        <li class="nav-item dropdown">
+
+		          <button class="btn dropdown-toggle border-body ms-5" data-bs-toggle="dropdown" aria-expanded="false">
+		            KIỂM TRA ĐƠN HÀNG
+		          </button>
+		          <ul class="dropdown-menu dropdown-menu ms-5">
+		            <li><a class="dropdown-item" href="#">Đã Đặt</a></li>
+		            <li><a class="dropdown-item" href="#">Chưa Đặt</a></li>
+		            <li><a class="dropdown-item" href="#">Chờ Xác Nhận</a></li>
+		          </ul>
+		        </li>
+		      </ul>
+		      <i class="bi bi-search-heart ms-5" id="exampleModal1"></i>
+		         <i class="bi bi-bag-heart ms-5" data-bs-toggle="modal" data-bs-target="#exampleModal" id="exampleModal1"></i>
+
+		        <!-- Button trigger modal -->
+		        <i class="bi bi-person-heart ms-5" data-bs-toggle="modal" data-bs-target="#exampleModalRR" id="exampleModal1"></i>
+		    </div>
+		  </div>
+		</nav>
+
+		<!-- <div>
+			<nav aria-label="breadcrumb">
+			  <ol class="breadcrumb" id="breadcrumb1">
+			    <li class="breadcrumb-item "><a href="./DangNhap2.html" class="link-warning link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Đăng nhập</a></li>
+			    <li class="breadcrumb-item "><a href="#" class="link-warning link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Trang chủ</a></li>
+			    <li class="breadcrumb-item"><a href="#" class="link-warning link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Giới thiệu</a></li>
+		      </ol>
+
+			</nav>
+
+			    <form class="d-flex ms-5 mt-0" role="search">
+        <input style="width:20rem; margin-left: 36rem;" class="form-control me-2 h-75" type="search" placeholder="Tìm kiếm" aria-label="Search">
+        <button class="btn btn-outline-warning h-75" type="submit"><i class="bi bi-search-heart"></i></button>
+      </form>
+			    
+		</div> -->
+	</div>
+	<div class="container mt-3 mb-3">
+		<div class="row">
+			<div class="col-md-4">
+				<nav aria-label="breadcrumb">
+			  <ol class="breadcrumb" id="breadcrumb1">
+			    <li class="breadcrumb-item "><a href="./DangNhap2.html" class="link-warning link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Đăng nhập</a></li>
+			    <li class="breadcrumb-item "><a href="#" class="link-warning link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Trang chủ</a></li>
+			    <li class="breadcrumb-item"><a href="#" class="link-warning link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Giới thiệu</a></li>
+		      </ol>
+
+				</nav>
+			</div>
+			<div class="col-md-4">
+				
+        <input style="width:20rem;" class="rounded-3 border border-light"  type="search" placeholder="Tìm kiếm" aria-label="Search">     
+			</div>
+ <style type="text/css">
+ 
+
+.social-container a{
+	border: 1px solid #dddddd;
+	border-radius: 50%;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 5px;
+	height: 40px;
+	width: 40px;
+	transition: 0.3s ease-in-out;
+}
+
+.social-container a:hover{
+	border: 1px solid #4bb6b7;
+}
+ </style>  
+			<div class="col-md-4">
+				<div class="social-container">
+					<a href="https://www.facebook.com/" class="social"><i class="bi bi-facebook"></i></a>
+					<a href="https://www.google.com/?hl=vi" class="social"><i class="bi bi-google"></i></a>
+					<a href="https://twitter.com/i/flow/login?redirect_after_login=%2F" class="social"><i class="bi bi-twitter"></i></a>					
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!--CAROUSEL-->
+
+<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+	  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner" style="margin-top:-15px;">
+    <div class="carousel-item active">
+      <img src="https://img3.thuthuatphanmem.vn/uploads/2019/10/14/anh-lookbook-thoi-trang_113854100.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5 class="text-warning">XONXEN LỊCH SỰ</h5>
+        <p >Hôm nay đi đâu nhỉ?</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="https://hacuc.vn/wp-content/uploads/2023/02/z4123284861295_4ea9040e63573171b9860d6ac8d09d1a-2048x779.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5 class="text-warning">XONXEN ÁO DÀI</h5>
+        <p >Hôm nay đi đâu nhỉ?</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="https://scontent.fdad3-1.fna.fbcdn.net/v/t1.15752-9/369056840_608809971411460_36317480785885563_n.png?_nc_cat=108&ccb=1-7&_nc_sid=ae9488&_nc_ohc=8irwpCiuh-gAX809FjT&_nc_ht=scontent.fdad3-1.fna&oh=03_AdTmXzwt0lkAVkgcRAhgILeUwrmqm7TmujxI0SmbSHqnqA&oe=650AE251" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5 class="text-warning">XONXEN TRẺ TRUNG</h5>
+        <p >Hôm nay đi đâu nhỉ?</p>
+      </div>
+    </div>
+
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+	<!-- Dưới-->
+	<!-- Caso -->
+
+	<div class="container text-center mt-5">
+		<div class="row">
+			<div class="product-container">
+			<div class="col-md-3 product">
+				<div class="image-container2">
+				<img src="https://i.pinimg.com/originals/f0/c4/c2/f0c4c2349e5e928e09d9d30eaa586f60.gif" class="img-fluid rounded-pill w-75">
+				<div class="overlay"></div>
+				</div>
+					<a href="SALE.html"><h5 class="text-warning mt-3" id="chu1">SUMMER SALE</h5></a>
+				
+			</div>
+			<div class="col-md-3 product">
+				<div class="image-container2">
+				<img src="https://scontent-hkg4-2.xx.fbcdn.net/v/t1.15752-9/368843383_1122332768745229_568831472664849681_n.png?_nc_cat=110&ccb=1-7&_nc_sid=ae9488&_nc_ohc=cB8CgesoevYAX9InX4p&_nc_ht=scontent-hkg4-2.xx&oh=03_AdR9URfMl8cRQeHKqWodgHb1ECG88yOQNKdH5zhDZ2AUwQ&oe=650ADAF3" class="img-fluid rounded-pill w-75 ">
+				<div class="overlay"></div>
+				</div>
+				<a href="AODAI.html"><h5 class="text-warning mt-3" id="chu1">ÁO DÀI</h5></a>
+			</div>
+			<div class="col-md-3 product">
+				<div class="image-container2">
+				<img src="https://scontent-hkg4-1.xx.fbcdn.net/v/t1.15752-9/368393038_306705012014810_6762364865628907050_n.png?_nc_cat=106&ccb=1-7&_nc_sid=ae9488&_nc_ohc=5zT-cOFNK9UAX-mIxzB&_nc_ht=scontent-hkg4-1.xx&oh=03_AdQbmSu4q9vKWmDPcZXiAsUKCAaGRUBCsTO6gwIRRdjs7A&oe=650ACC4A" class="img-fluid rounded-pill w-75 ">
+				<div class="overlay"></div>
+				</div>
+				<a href="AOKIEU.html"><h5 class="text-warning mt-3" id="chu1">TRẺ TRUNG</h5></a>
+			</div>
+			<div class="col-md-3 product">
+				<div class="image-container2">
+				<img src="https://i.pinimg.com/originals/62/dd/c4/62ddc455488a13d67f4198a09dc4bb29.gif" class="img-fluid rounded-pill" style="width: 21.5rem;">
+				<div class="overlay"></div>
+				</div>
+				<a href="GIAOHANG.html"><h5 class="text-warning" id="chu1">GIAO HÀNG</h5></a>
+			</div>
+		</div>
+	</div>
+	</div>
+	
+
+	<!--	DANH MỤC SẢN PHẨM  -->
+		<div class="container">
+			<h1 class="text-center mt-5 mb-5">DANH MỤC SẢN PHẨM</h1>
+			
+			<div class="row text-center">
+				<div class="product-container">
+				<div class="col-md-3 product">
+				<img src="https://theme.hstatic.net/200000536797/1000942237/14/danhmucnoibtimg2.png?v=721" class="img-fluid img-zoomable" alt="áo" width="100">
+				
+			</div>
+			<div class="col-md-3 product">
+				<img src="https://theme.hstatic.net/200000536797/1000942237/14/danhmucnoibtimg3.png?v=721" class="img-fluid img-zoomable" alt="áo" width="100">
+				
+			</div>
+			<div class="col-md-3 product">
+				<img src="https://theme.hstatic.net/200000536797/1000942237/14/danhmucnoibtimg4.png?v=721" class="img-fluid img-zoomable" alt="áo" width="100">
+				
+			</div>
+			<div class="col-md-3 product">
+				<img src="https://theme.hstatic.net/200000536797/1000942237/14/danhmucnoibtimg5.png?v=721" class="img-fluid img-zoomable" alt="áo" width="100">
+				
+			</div>
+		</div>
+	</div>
+		<!--** Danh mục sản phẩm **-->
+		<!-- hr -->
+		<div class="container mt-3 mb-3">
+		  <div class="row">
+		    <div class="col"></div>
+		    <div class="col-6">
+		      <div class="custom-hr"></div>
+		    </div>
+		    <div class="col"></div>
+		  </div>
+		</div>
+<!-- *hr* -->
+
+<!-- NEW ARRIVALS -->
+		<div class="container">
+			<h2 class="text-center mt-5 mb-4 text-warning">SẢN PHẨM MỚI</h2>
+			<div class="product-container">
+			<div class="card product" style="width: 16rem;" id="product2">
+			  <div class="image-container2">
+
+			    <img src="https://product.hstatic.net/200000536797/product/339024229_1051618455799144_5990471192084564059_n_f306761b75454f3fad1f5760a4506751_master.jpg" class="card-img-top" alt="...">
+			    <div class="overlay"></div>
+			  </div>
+			  <div class="card-body">
+			    <h5 class="card-title">Áo Len QC Crop Hai Dây Chữ</h5>
+			    <p class="card-text text-danger">195.000đ</p>
+			    <p><a href="#" class="link-warning link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Xem Thêm</a>  <i class="bi bi-cart-plus float-end rung" data-bs-toggle="modal" data-bs-target="#exampleModalE" id="exampleModal3"></i></p>
+
+			  </div>
+			</div>
+
+					<div class="card product" style="width: 16rem;" id="product2">
+						<div class="image-container2">
+			  <img src="https://product.hstatic.net/200000536797/product/342068656_680461516937792_6108384102807408359_n_11f2cea0625f41449bc5df8094c2824c_master.jpg" class="card-img-top" alt="...">
+			  <div class="overlay"></div>
+			  </div>
+			  <div class="card-body">
+			    <h5 class="card-title">Áo Kiểu Vải Sát Nách Rút Lưng</h5>
+			    <p class="card-text text-danger">325.000đ</p>
+			    <p><a href="#" class="link-warning link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Xem Thêm</a><i class="bi bi-cart-plus float-end rung"data-bs-toggle="modal" data-bs-target="#exampleModalE" id="exampleModal3"></i></p>
+			  </div>
+					</div>
+					<div class="card product" style="width: 16rem;" id="product2">
+						<div class="image-container2">
+			  <img src="https://product.hstatic.net/200000536797/product/338965815_772877630708794_5818840465388820429_n_25cac34a44d1470586b4e0190361b6eb_master.jpg" class="card-img-top" alt="...">
+			  <div class="overlay"></div>
+			  </div>
+			  <div class="card-body">
+			    <h5 class="card-title">Sét Jean Nữ Sơ Mi Kèm Quần Short</h5>
+			    <p class="card-text text-danger">415.000đ</p>
+			    <p><a href="#" class="link-warning link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Xem Thêm</a><i class="bi bi-cart-plus float-end rung"data-bs-toggle="modal" data-bs-target="#exampleModalE" id="exampleModal3"></i></p>
+			  </div>
+					</div>
+					<div class="card product" style="width: 16rem;" id="product2">
+						<div class="image-container2">
+			  <img src="https://product.hstatic.net/200000536797/product/333508743_1143169919713843_5274792545693654283_n_c7de286afc854d97a258d959c2458e24_master.jpg" class="card-img-top" alt="...">
+			  <div class="overlay"></div>
+			  </div>
+			  <div class="card-body">
+			    <h5 class="card-title">Áo Khoác Jean Nữ Sisi Túi Nắp</h5>
+			    <p class="card-text text-danger">350.000đ</p>
+			    <p><a href="#" class="link-warning link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Xem Thêm</a><i class="bi bi-cart-plus float-end rung"data-bs-toggle="modal" data-bs-target="#exampleModalE" id="exampleModal3"></i></p>
+			  </div>
+					</div>
+
+			</div>
+		</div>
+<!-- **NEW ARRIVALS** -->
+
+
+	<!-- Bộ sưu tập -->
+<style type="text/css">
+
+
+</style>
+	<div class="container">
+		<div class="row mt-5">
+			<div class="col-md-3">
+				<h1>Bộ sưu tập</h1>
+				<hr>
+				<p class="bst1">IDOL STYLE</p>
+				<p class="bst1">HELLO SUMMER 2023</p>
+				<p class="bst1">STREET STYLE</p>
+			</div>
+
+			<div class="col-md-3">
+				<div class="image-container">
+					<img src="https://theme.hstatic.net/200000536797/1000942237/14/block_home_category2.jpg?v=721" class="img-fluid">
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="image-container">
+					<img src="https://theme.hstatic.net/200000536797/1000942237/14/block_home_category3.jpg?v=721" class="img-fluid">
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="image-container">
+						<img src="https://theme.hstatic.net/200000536797/1000942237/14/block_home_category4.jpg?v=726" class="img-fluid">
+					</div>
+				</div>
+		</div>
+	</div>
+
+	<!-- **Bộ sưu tập** -->
+	<!-- Váy Thiết kế -->
+	<div class="container mt-3">
+		<h1 class="text-center mt-5 mb-5">VÁY THIẾT KẾ</h1>
+		<div class="product-container">
+			<div class="card product" id="product3" style="width: 15rem;">
+				<div class="image-container2">
+				<img src="https://theme.hstatic.net/200000536797/1000942237/14/home_banner_1.jpg?v=726" class="card-img-top" alt="...">
+				<div class="overlay"></div>
+				</div>
+				<span class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-danger">40%</span>
+				<div class="card-body">
+					<h5 class="card-title">Áo Đầm Hai Dây Rớt Vai Bèo</h5>
+					<p class="card-text text-danger" id="card-text1">171.000₫ <i class="text-decoration-line-through ms-3">285.000đ</i></p>
+					<p class="text-warning">Xem ngay</p>
+				</div>
+			</div>
+
+			<div class="card product" id="product3" style="width: 15rem;">
+				<div class="image-container2">
+				<img src="https://i.pinimg.com/564x/b1/b1/27/b1b127e3b10b98ffeb5cfb32ff61388b.jpg" class="card-img-top" alt="...">
+				<div class="overlay"></div>
+				</div>
+				<span class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-danger">40%</span>
+				<div class="card-body">
+					<h5 class="card-title">Áo Đầm Hoa Cổ Vuông</h5>
+					<p class="card-text text-danger" id="card-text1">120.000₫ <i class="text-decoration-line-through ms-3">220.000đ</i></p>
+					<p class="text-warning">Xem ngay</p>
+				</div>
+			</div>
+
+			<div class="card product" id="product3" style="width: 15rem;">
+				<div class="image-container2">
+				<img src="https://i.pinimg.com/originals/3b/52/0f/3b520fdb34818e497d9c5a8817e172b7.jpg" class="card-img-top" alt="...">
+				<div class="overlay"></div>
+				</div>
+				<span class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-danger">40%</span>
+				<div class="card-body">
+					<h5 class="card-title">Áo Đầm Hoa Nhí Nhíu Ngực</h5>
+					<p class="card-text text-danger" id="card-text1">144.000₫ <i class="text-decoration-line-through ms-3">240.000đ</i></p>
+					<p class="text-warning">Xem ngay</p>
+				</div>
+			</div>
+
+			<div class="card product" id="product3" style="width: 15rem;">
+				<div class="image-container2">
+				<img src="https://i.pinimg.com/564x/dc/d9/18/dcd918032a5af38a4b6b3f1546f7cdfb.jpg" class="card-img-top" alt="...">
+				<div class="overlay"></div>
+				</div>
+				<span class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-danger">40%</span>
+				<div class="card-body" >
+					<h5 class="card-title">Áo Đầm Hoa Suông Dễ Thương</h5>
+					<p class="card-text text-danger" id="card-text1">135.000₫ <i class="text-decoration-line-through ms-3">225.000đ</i></p>
+					<p class="text-warning">Xem ngay</p>
+				</div>
+			</div>
+
+			<div class="card product" id="product3" style="width: 15rem;">
+				<div class="image-container2">
+				<img src="https://theme.hstatic.net/200000536797/1000942237/14/home_banner_2.jpg?v=726" class="card-img-top" alt="...">
+				<div class="overlay"></div>
+				</div>
+				<span class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-danger">40%</span>
+				<div class="card-body">
+					<h5 class="card-title">Áo Đầm Ngắn Tay Ly Ngực</h5>
+					<p class="card-text text-danger" id="card-text1">237.000₫ <i class="text-decoration-line-through ms-3">395.000đ</i></p>
+					<p class="text-warning">Xem ngay</p>
+				</div>
+			</div>
+</div>
+
+		</div>
+	</div>
+	<!-- **Váy Thiết kế** -->
+	<!-- Về chúng tôi -->
+<style type="text/css">
+
+
+
+
+
+</style>
+	<div class="container mt-4">
+		<div class="card mb-3">
+		  <div class="row g-0">
+		    <div class="col-md-6" id="lazyloaded1">
+		      <img class=" lazyloaded2" src="https://file.hstatic.net/1000300454/file/banner-store02_732eb8ad4a7945ac90e62665f920a7b1.jpg" alt="Về chúng tôi" style="width:100%; height: %;">
+		      <div class="overlay-text">
+    				<h2>VỀ CHÚNG TÔI</h2>
+  				</div>
+  				
+  				<button class="overlay-text border border-light bg-light rounded" id="buttonAMS" style="margin-top: 15%;"><span><a href="./vechungtoi.html">Xem ngay</a></span></button>
+  			
+		    </div>
+
+		    <div class="col-md-6">
+		      <div class="card-body mt-3">
+<div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0">
+  
+  <p>Để nói về thời trang, chúng ta sẽ có nhiều câu chuyện để bàn đến. Đơn giản là, thời trang không bao giờ có điểm dừng. Chính vì điều này, đã thôi thúc niềm đam mê thời trang trong chúng tôi. Cùng với đó, mong muốn bất kỳ phụ nữ nào cũng tự tin tỏa sáng với hình ảnh xinh đẹp nhất. Xonxen shop đã chính thức ra mắt vào năm 2009.</p>
+ 
+  <p>Những năm tiếp theo, khi đã có chỗ đứng vững chắc trên thị trường thì chúng tôi bắt đầu mở rộng dần các chi nhánh trong Đà Nẵng và các tỉnh thành lân cận như Huế, Quảng Nam. Nhờ những kinh nghiệm từ cửa hàng đầu tiên, những cửa hàng kế tiếp nhanh chóng tiếp cận với khách hàng và mang đến làn sóng xu hướng thời trang trẻ trung, hiện đại. Liên tiếp những năm sau, Chúng tôi bắt đầu phủ rộng khắp tỉnh thành như: Quảng Ngãi, Quy Nhơn, Buôn ma thuột, Nha Trang, và mới đây là Hồ Chí Minh.</p>
+ 
+  <p>Sự mở rộng này tuy có nhiều cơ hội nhưng cũng không ít phần thách thức. Thế nên, đòi hỏi chúng tôi phải nỗ lực thật nhiều, về sản phẩm, về dịch vụ và thu thập ý kiến của khách hàng khi mua sắm để thương hiệu có cái nhìn tốt hơn về thực tế, biết cách đổi mới phù hợp với từng đối tượng khách hàng mua sắm.</p>
+  <p>Một chặng đường dài có các bạn, đồng nghiệp, khách hàng.. Mong rằng, trong mỗi hành trình phía trước, bạn vẫn luôn đồng hành cùng Xonxen.</p>
+  <p>-Trân Trọng-</p>
+
+</div>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+	</div>
+
+	<!-- **Vể chúng tôi** -->
+<hr>
+<!-- Cuối -->
+<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-3 mt-3">
+				<img src="https://cf.shopee.vn/file/444e7d610fd8407ff1b8529a41adcd6d" class="img-fluid" alt="ảnh logo" width="80"></a><br>
+				<b>Liên hệ: <a href="https://www.facebook.com/khai.Gdtg.trumuytin" class="link-warning">Khải Coder</a> <i class="bi bi-check2"></i></b><br>
+				<h6 class="mt-4">Địa chỉ: 123 Bà Triệu - TP Huế</h6>
+				<h6 class="mt-4">Điện thoại: 0359176205</h6><br>
+				<h6>Theo dõi chúng tôi</h6>
+				<i class="bi bi-facebook"></i>
+				<i class="bi bi-messenger"></i>
+				<i class="bi bi-whatsapp"></i>
+			</div>
+			<div class="col-md-3">
+				<h3 class="mt-3">Hỏi đáp</h3><hr>
+				<p class="mt-4"><a href="#" class="link-success link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Hướng dẫn mua hàng</a></p>
+				<p class="mt-4"><a href="#" class="link-success link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Hướng dẫn khuyến mãi</a></p>
+				<p class="mt-4"><a href="#" class="link-success link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Hướng dẫn đổi hàng</a></p>
+				<p class="mt-4"><a href="#" class="link-success link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Hướng dẫn thanh toán</a></p>
+				<p class="mt-4"><a href="#" class="link-success link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Hướng dẫn khác</a></p>
+			</div>
+			<div class="col-md-3">
+				<h3 class="mt-3">Khách hàng</h3><hr>
+				<p class="mt-4"><a href="#" class="link-success link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Thẻ khuyến mãi</a></p>
+				<p class="mt-4"><a href="#" class="link-success link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Đăng kí tài khoản</a></p>
+				<p class="mt-4"><a href="#" class="link-success link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Chính sách</a></p>
+				<p class="mt-4"><a href="#" class="link-success link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Quà tặng tri ân</a></p>
+				<p class="mt-4"><a href="#" class="link-success link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Sản phẩm khác</a></p>
+			</div>
+			<div class="col-md-3">
+				<h3 class="mt-3">Thanh Toán</h3><hr>
+				<label for="exampleDataList" class="form-label">Email</label>
+				<input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Nhập email của bạn...">
+				<datalist id="datalistOptions">
+				  <option value="@gmail">
+				  <option value=".com">
+				</datalist>
+				<p><a href="#" class="link-warning link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Chấp nhận thanh toán</a></p>
+				<img src="https://scontent.fdad3-5.fna.fbcdn.net/v/t1.15752-9/352456783_699836118569265_2601653475588846143_n.png?_nc_cat=111&ccb=1-7&_nc_sid=ae9488&_nc_ohc=QmhcYhDhV5IAX9cyLhM&_nc_ht=scontent.fdad3-5.fna&oh=03_AdTdgEZxU6-BzdjRj_MboKXgD7v2a_dl7UqQOPUBKGJnCQ&oe=64A7D391">
+			</div>
+		</div>
+	</div>
+
+
+
+</body>
+</html>

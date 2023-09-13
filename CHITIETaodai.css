@@ -1,0 +1,284 @@
+.img-zoomable {
+  transition: transform 0.3s;
+}
+
+.img-zoomable:hover {
+  transform: scale(0.9);
+}
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+#breadcrumb1{
+	margin-top: 5rem;
+}
+#exampleModal1{
+	transition: transform 0.2s;
+}
+#exampleModal1:hover{
+	transform: scale(1.9);
+}
+.bst1{
+	color: black;
+}
+.bst1:hover{
+	color: #FF4500;
+}
+.bst2{
+	color: black;
+}
+.bst2:hover{
+	color: #FF4500;
+}
+.bst3{
+	color: black;
+}
+.bst3:hover{
+	color: #FF4500;
+}
+.custom-hr {
+    height: 3px;
+    width: 80px;
+    background-color: #FF4500;
+    margin: 0 auto;
+}
+a{
+text-decoration: none;
+}
+#exampleModalLabel2 {
+ outline: none;
+ cursor: pointer;
+ border: none;
+ padding: 0.9rem 1rem;
+ margin: 0;
+ font-family: inherit;
+ font-size: inherit;
+ position: relative;
+ display: inline-block;
+ letter-spacing: 0.05rem;
+ font-weight: 500;
+ font-size: 12px;
+ border-radius: 20px;
+ overflow: hidden;
+ background: #FF8C00;
+ color: black;
+}
+
+#exampleModalLabel2 span {
+ position: relative;
+ z-index: 10;
+ transition: color 0.4s;
+}
+
+#exampleModalLabel2:hover span {
+ color: black;
+}
+
+#exampleModalLabel2::before,
+#exampleModalLabel2::after {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ z-index: 0;
+}
+
+#exampleModalLabel2::before {
+ content: "";
+ background: #FFFFFF;
+ width: 120%;
+ left: -10%;
+ transform: skew(30deg);
+ transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+}
+
+#exampleModalLabel2:hover::before {
+ transform: translate3d(100%, 0, 0);
+}
+/*button*/
+#button1 {
+ padding: 0.5em 1em;
+ border: 1px solid #C8C8C8;
+ position: relative;
+ overflow: hidden;
+ background-color: #C8C8C8;
+ text-align: center;
+ text-transform: uppercase;
+ font-size: 12px;
+ transition: .3s;
+ z-index: 1;
+ font-family: inherit;
+ color: black;
+}
+
+#button1::before {
+ content: '';
+ width: 0;
+ height: 515%;
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%) rotate(45deg);
+ background: white;
+ transition: .5s ease;
+ display: block;
+ z-index: -1;
+}
+
+#button1:hover::before {
+ width: 105%;
+ border: 30px solid #FF8C00;
+}
+
+#button1:hover {
+ color: #FF8C00;
+}
+
+.modal-content{
+	max-width: 28rem;
+}
+.image-container {
+      position: relative;
+      display: inline-block;
+    }
+
+    .image-container img {
+      width: 100%;
+      height: auto;
+      transition: opacity 0.2s ease;
+    }
+
+    .image-container .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+
+    .image-container:hover img {
+      opacity: 0;
+    }
+
+    .image-container:hover .overlay {
+      opacity: 1;
+    }
+    .image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.hover-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.image-container:hover .hover-image {
+  opacity: 1;
+}
+a{
+text-decoration: none;
+}
+#chu{
+  color: black;
+}
+#chu:hover{
+  color: #FF8C00;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  /* thêm các thuộc tính flexbox khác để tự động điều chỉnh layout */
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+/* Ví dụ sử dụng media query để điều chỉnh font-size cho màn hình nhỏ hơn 768px */
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.product {
+  width: 50%; /* 2 hàng dọc, mỗi hàng chiếm 50% chiều rộng */
+  /* Thêm các kiểu dáng sản phẩm, ví dụ như margin, padding, ... */
+}
+@media screen and (max-width: 768px) {
+  .product {
+    width: 100%; /* Một hàng dọc, mỗi sản phẩm chiếm 100% chiều rộng */
+    margin-top: 10px;
+    margin-left: 10px;
+    max-width: 10rem;
+  }
+  .card-title{
+    font-size: 12px;
+  }
+  .text-warning{
+    margin-top: -10px;
+    margin-bottom: -10px;
+    font-size: 12px;
+  }
+  .card-text{
+    font-size: 12px;
+  }
+  .danhgia{
+    margin-top: 5px;
+  }
+  .danhgia i{
+    font-size: 10px;
+
+  }
+  .danhgia button{
+    display: none;
+    font-size: 12px;
+    border: 1px solid #fff;
+
+  }
+  .danhgia .ms-4{
+    display: inline-block;
+  }
+  h1.text-center{
+   margin-left: 30px;
+  }
+  i.text-danger{
+    font-size: 12px; 
+  }
+  p.giaohang5{
+    margin-bottom: 50rem;
+  }
+  p.giaohang5{
+    margin-top: -53.6rem;
+  }
+  h5{
+    margin-top: 5px;
+  }
+  
+}
+
+@media screen and (min-width: 1000px) {
+  .product {
+    width: 100%; /* Một hàng dọc, mỗi sản phẩm chiếm 100% chiều rộng */
+    max-width: 18rem;
+    margin-left: 20px;
+     margin-top: 20px;
+  }
+  .active img{
+    max-width: 150rem;
+  }
+   .danhgia{
+    margin-top: 10px;
+  }
+
+}
